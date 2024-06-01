@@ -1,0 +1,43 @@
+﻿<Window x:Class="FeedbackApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FeedbackApp"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <ScrollViewer>
+            
+        
+        <StackPanel Margin="10">
+            <TextBlock Text="First Name:" />
+            <TextBox x:Name="FirstNameTextBox" Margin="0,0,0,10"/>
+
+            <TextBlock Text="Last Name:" />
+            <TextBox x:Name="LastNameTextBox" Margin="0,0,0,10"/>
+
+            <TextBlock Text="Name Abbreviation (eg. MDZY):" />
+            <TextBox x:Name="NameAbbreviationTextBox" Margin="0,0,0,10"/>
+
+            <TextBlock Text="Position:" />
+            <TextBox x:Name="PositionTextBox" Margin="0,0,0,10"/>
+
+            <TextBlock Text="Department:" />
+            <TextBox x:Name="DepartmentTextBox" Margin="0,0,0,10"/>
+
+            <Button Content="Add Person" Click="AddPersonButton_Click" Margin="0,0,0,10"/>
+
+            <TextBlock Text="Feedback:" Margin="0,10,0,0"/>
+            <TextBox x:Name="FeedbackTextBox" Height="50" Margin="0,0,0,10"/>
+            <Button Content="Save Feedback" Click="SaveFeedbackButton_Click" Margin="0,0,0,10"/>
+
+            <Button Content="Remove Selected Person" Click="RemovePersonButton_Click" Margin="0,10,0,0"/>
+
+            <ListBox x:Name="PersonsListBox" DisplayMemberPath="FirstName" Height="150"/>
+
+            <Button Content="Save Person" Click="SavePersonsButton_Click" Margin="0,10,0,0"/>
+        </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</Window>
