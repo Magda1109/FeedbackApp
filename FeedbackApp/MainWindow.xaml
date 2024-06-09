@@ -3,41 +3,56 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:FeedbackApp"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
+
     <Grid>
-        <ScrollViewer>
-            
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Text="Employees" Grid.Row="0"/>
+        <ListBox Name="PersonsListBox" Grid.Row="1" Grid.RowSpan="12"  DisplayMemberPath="NameAbbreviation" Grid.Column="0" SelectionChanged="PersonsListBox_SelectionChanged"/>
         
-        <StackPanel Margin="10">
-            <TextBlock Text="First Name:" />
-            <TextBox x:Name="FirstNameTextBox" Margin="0,0,0,10"/>
+        <TextBlock Text="Name Abbreviation (e.g. MDZY)" Grid.Row="0" Grid.Column="1"/>
+        <TextBox Name="NameAbbreviationTextBox" Grid.Column="1" Grid.Row="1"/>
 
-            <TextBlock Text="Last Name:" />
-            <TextBox x:Name="LastNameTextBox" Margin="0,0,0,10"/>
+        <TextBlock Text="First Name" Grid.Row="2" Grid.Column="1"/>
+        <TextBox Name="FirstNameTextBox" Grid.Column="1" Grid.Row="3"/>
 
-            <TextBlock Text="Name Abbreviation (eg. MDZY):" />
-            <TextBox x:Name="NameAbbreviationTextBox" Margin="0,0,0,10"/>
+        <TextBlock Text="Last Name" Grid.Row="4" Grid.Column="1"/>
+        <TextBox Name="LastNameTextBox" Grid.Column="1" Grid.Row="5"/>
 
-            <TextBlock Text="Position:" />
-            <TextBox x:Name="PositionTextBox" Margin="0,0,0,10"/>
+        <TextBlock Text="Position" Grid.Row="6" Grid.Column="1"/>
+        <TextBox Name="PositionTextBox" Grid.Column="1" Grid.Row="7"/>
 
-            <TextBlock Text="Department:" />
-            <TextBox x:Name="DepartmentTextBox" Margin="0,0,0,10"/>
+        <TextBlock Text="Team" Grid.Row="8" Grid.Column="1"/>
+        <TextBox Name="TeamTextBox" Grid.Column="1" Grid.Row="9"/>
 
-            <Button Content="Add Person" Click="AddPersonButton_Click" Margin="0,0,0,10"/>
 
-            <TextBlock Text="Feedback:" Margin="0,10,0,0"/>
-            <TextBox x:Name="FeedbackTextBox" Height="50" Margin="0,0,0,10"/>
-            <Button Content="Save Feedback" Click="SaveFeedbackButton_Click" Margin="0,0,0,10"/>
-
-            <Button Content="Remove Selected Person" Click="RemovePersonButton_Click" Margin="0,10,0,0"/>
-
-            <ListBox x:Name="PersonsListBox" DisplayMemberPath="FirstName" Height="150"/>
-
-            <Button Content="Save Person" Click="SavePersonsButton_Click" Margin="0,10,0,0"/>
-        </StackPanel>
-        </ScrollViewer>
+        <Button Name="AddPersonButton" Content="Add Person" Grid.Column="1" Grid.Row="10" Click="AddPersonButton_Click"/>
+        <Button Name="EditPersonButton" Content="Edit Person" Grid.Column="1" Grid.Row="11" Click="EditPersonButton_Click"/>
+        <Button Name="RemovePersonButton" Content="Remove Person" Grid.Column="1" Grid.Row="12" Click="RemovePersonButton_Click"/>
+        
+        <TextBlock Text="Feedback" Grid.Column="2" Grid.Row="0"/>
+        <TextBox Name="FeedbackTextBox" Grid.Column="2" Grid.Row="1" Grid.RowSpan="12"/>
     </Grid>
+
 </Window>
